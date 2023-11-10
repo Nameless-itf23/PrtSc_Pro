@@ -1,8 +1,9 @@
 import os
 
-save_folder = './screenshot/'
+prtsc_folder = 'screenshot'
 
 def save(save_func, name, now):
-    if not os.path.isdir(save_folder+name):
-        os.makedirs(save_folder+name)
-    save_func(save_folder+name+'/'+now.strftime('%Y_%m_%d_%H_%M_%S')+'.png')
+    save_folder = prtsc_folder + '/' + name
+    if not os.path.isdir(save_folder):
+        os.makedirs(save_folder)
+    save_func(save_folder + '/' + now.strftime('%Y_%m_%d_%H_%M_%S')+'.png')
